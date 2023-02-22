@@ -1,9 +1,4 @@
--- Display highest temperatures
--- DML query to list top 3 sorted temperatures during July and Agust
-SELECT city,AVG(value) AS avg_temp
-FROM temperatures
-WHERE month=7 OR month=8
-GROUP BY city
-ORDER BY avg_temp DESC
-LIMIT 3;
-
+-- 102 advanced
+SELECT ts.title, SUM(tr.rate) AS rating FROM tv_shows ts, tv_show_ratings tr
+WHERE ts.id = tr.show_id
+GROUP BY ts.title ORDER BY rating DESC;
