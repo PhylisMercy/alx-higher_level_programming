@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
+"""
+Created on Wed April 5 07:27 2023
+@author: Phylis Mercy
+"""
 from urllib.request import urlopen
+
 
 if __name__ == "__main__":
     url = 'https://intranet.hbtn.io/status'
