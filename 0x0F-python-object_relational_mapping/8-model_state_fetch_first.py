@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Created on Fri Apr  14 11:24:8 2023
+Created on Fri Apr  14 11:43:20 2023
 @author: Phylis Mercy
 """
 from model_state import Base, State
@@ -23,11 +23,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     # create instance of new custom session class
     session = Session()
-    states = session.query(State).filter(State.name.contains('a'))\
-                    .order_by(State.id)
-    if states is not None:
-        for state in states:
-            print('{}: {}'.format(state.id, state.name))
+    state = session.query(State).order_by(State.id).first()
+    if state is not None:
+        print('{}: {}'.format(state.id, state.name))
     else:
         print('Nothing')
-
